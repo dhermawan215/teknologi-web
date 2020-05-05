@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="fontawesome/css/all.min.css">
+  <title>Admin</title>
+  <script>
+    function myFunction() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <nav class="navbar">
+    <a href="" class="logo">Selamat Datang |<b><span> Smart School</span></b></a>
+    <ul>
+      <li><a href="#" title="admin"><i class="fa fa-user"></i> Hai Admin</a></li>
+      <li><a href="#" title="log-out"><i class="fa fa-sign-out-alt"></i> log out</a></li>
+    </ul>
+  </nav>
+  <div class="row">
+    <div class="kiri">
+      <ul class="isi-kiri">
+        <li class="item-kiri"><a href="#" title="Dashboard"><i class="fa fa-poll"></i>home</a> </li>
+        <li class="item-kiri"><a href="#" title="Data Siswa"><i class="fa fa-user-graduate"></i>siswa</a> </li>
+        <li class="item-kiri"><a href="#" title="Data Guru"><i class="fa fa-chalkboard-teacher"></i>guru</a> </li>
+        <li class="item-kiri"><a href="#" title="System Setting"><i class="fa fa-user-cog"></i>setting</a> </li>
+      </ul>
+
+    </div>
+    <div class="kanan">
+      <div class="header">Dashboard</div>
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <h3 class="judul-text"><a href="#">User Registered</a></h3>
+            <p>-</p>
+            <p>190 User</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="card2">
+            <h3 class="judul-text"><a href="#">Visit</a></h3>
+            <p>-</p>
+            <p>100 Online</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="card3">
+            <h3 class="judul-text"><a href="#">Date</a></h3>
+            <p>-</p>
+            <p>Monday, 4 May 2020</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="card4">
+            <h3 class="judul-text"><a href="#">Message</a></h3>
+            <p>-</p>
+            <p>No Message Yet</p>
+          </div>
+        </div>
+      </div>
+      <h2 style="margin-left: 10px;">Search</h2>
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+      <table id="myTable">
+        <tr class="header">
+          <th style="width:60%;">Nama</th>
+          <th style="width:40%;">Alamat</th>
+        </tr>
+        <tr>
+          <td>Bagus Setiawan</td>
+          <td>Lemah Abang</td>
+        </tr>
+        <tr>
+          <td>Bagaskara</td>
+          <td>Perum. Aster Cikarang</td>
+        </tr>
+        <tr>
+          <td>Nabila</td>
+          <td>Pilar</td>
+        </tr>
+        <tr>
+          <td>Dwi Santoso</td>
+          <td>Jababeka</td>
+        </tr>
+
+
+      </table>
+
+    </div>
+
+
+
+  </div>
+
+  </div>
+</body>
+
+</html>
